@@ -34,7 +34,7 @@ body {
         background-image: url('1..jpg'); /* Third image */
     }
     100% {
-        background-image: url('2.jpg'); /* Loop back to first image */
+        background-image: url('4.jpg'); /* Loop back to first image */
     }
 }
 
