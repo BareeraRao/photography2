@@ -1,0 +1,94 @@
+/* Reset default padding, margin, and box-sizing for all elements */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure html and body take up the full viewport height and width */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+/* Slideshow animation for the body background */
+body {
+    animation: slideshow 20s infinite;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    transition: background-image 1s ease-in-out; /* Smooth transition */
+}
+
+/* Define the slideshow animation */
+@keyframes slideshow {
+    0% {
+        background-image: url('2.jpg'); /* First image */
+    }
+    33% {
+        background-image: url('1.png'); /* Second image */
+    }
+    66% {
+        background-image: url('1..jpg'); /* Third image */
+    }
+    100% {
+        background-image: url('2.jpg'); /* Loop back to first image */
+    }
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    padding: 10px; /* Add padding to ensure logo isn't too close to edges */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Logo styling */
+.logo {
+    height: auto;
+    max-width: 100%;
+    width: 60%; /* Default size for large screens */
+}
+
+/* Media queries for responsive logo */
+@media (max-width: 767px) {
+    .logo {
+        width: 40%; /* Smaller size for small screens (phones) */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 119px) {
+    .logo {
+        width: 5px; /* Slightly larger size for medium screens (tablets) */
+    }
+}
+
+@media (min-width: 1200px) {
+    .logo {
+        width: 15%; /* Larger size for large screens (desktops) */
+    }
+}
+
+/* Preload images using a hidden container */
+.preload-images {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.preload-images img {
+    display: none;
+}
+
+.preload-images img[src='2.jpg'],
+.preload-images img[src='1.png'],
+.preload-images img[src='1..jpg'],
+.preload-images img[src='4.jpg'] {
+    display: block;
+}
